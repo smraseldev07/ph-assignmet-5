@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import type { itechnology } from './Types';
 
 interface techprops {
@@ -7,6 +8,11 @@ interface techprops {
 
 const Techcarddesign = ({technology} : techprops) => {
 
+  const [isselected , setisselected] = useState(false)
+
+  const handlestok = (type) =>{
+   setisselected(true)
+  }
     
     return (
         <div>
@@ -59,11 +65,11 @@ const Techcarddesign = ({technology} : techprops) => {
       </div>
 
       {/* Button */}
-      <button
-        className="mt-5 w-full rounded-xl bg-slate-950 py-3 text-base font-medium text-white
-                   transition hover:bg-slate-800"
+      <button  onClick={() => setisselected(true)}
+        className={isselected === false ? ` mt-5 w-full rounded-xl bg-slate-950 py-3 text-base font-medium text-white
+                   transition hover:bg-slate-800` : `text-[#D91B7E] mt-5 w-full rounded-xl border py-3` }
       >
-        Add to Stack
+        {isselected === true ? "✓ Added to Stack" : "Add to Stack"}
       </button>
     </div>
         </div>
