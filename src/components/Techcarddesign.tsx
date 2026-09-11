@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import type { itechnology } from './Types';
+import { Bounce, toast } from 'react-toastify';
 
 interface techprops {
     technology : itechnology
@@ -10,9 +11,26 @@ const Techcarddesign = ({technology} : techprops) => {
 
   const [isselected , setisselected] = useState(false)
 
-  const handlestok = (type) =>{
-   setisselected(true)
-  }
+ const handlestack = () => {
+      if(isselected){
+        return
+      }
+      setisselected(true)
+      
+      toast(`${technology.name} Added`  , {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+  
+  
+ }
     
     return (
         <div>
@@ -65,7 +83,7 @@ const Techcarddesign = ({technology} : techprops) => {
       </div>
 
       {/* Button */}
-      <button  onClick={() => setisselected(true)}
+      <button  onClick={() => handlestack()}
         className={isselected === false ? ` mt-5 w-full rounded-xl bg-slate-950 py-3 text-base font-medium text-white
                    transition hover:bg-slate-800` : `text-[#D91B7E] mt-5 w-full rounded-xl border py-3` }
       >
