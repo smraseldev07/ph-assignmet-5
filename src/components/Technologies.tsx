@@ -18,8 +18,8 @@ const Technologies = ({techpromise} :techprops) => {
     
     return (
         <div className="container mx-auto mt-28">
-            <h1 className="text-5xl font-bold">Explore the <span>Technologies</span></h1>
-            <p className="mt-2">Pick one technology per category to build your ideal stack.</p>
+            <h1 className="text-5xl font-bold">Explore the <span className="text-[#DB2777]">Technologies</span></h1>
+            <p className="mt-2 mb-4">Pick one technology per category to build your ideal stack.</p>
 
         <div className="flex">
                 <Technologycard technologies = {technologies} yourstack ={yourstack} setyourstack = {setyourstack } ></Technologycard>
