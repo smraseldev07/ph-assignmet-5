@@ -1,10 +1,13 @@
 
 import type { itechnology } from './Types';
 import Techcarddesign from './Techcarddesign';
+import type { Dispatch, SetStateAction } from 'react';
 interface cardprop {
     technologies : itechnology[]
+    yourstack : itechnology[]
+     setyourstack:Dispatch<SetStateAction<itechnology[]> >
 }
-const Technologycard = ({technologies} :cardprop ) => {
+const Technologycard = ({technologies, yourstack , setyourstack} :cardprop ) => {
    
     
     return (
@@ -12,7 +15,7 @@ const Technologycard = ({technologies} :cardprop ) => {
             {
                 technologies.map((technology) =>
                    
-                      <Techcarddesign key={technology.id} technology  = {technology}></Techcarddesign>
+                      <Techcarddesign key={technology.id} technology  = {technology} yourstack ={yourstack} setyourstack = {setyourstack} ></Techcarddesign>
                    
                 )
             }

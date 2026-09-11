@@ -1,19 +1,31 @@
 
-import { useState } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import type { itechnology } from './Types';
 import { Bounce, toast } from 'react-toastify';
 
 interface techprops {
     technology : itechnology
+     yourstack : itechnology[]
+         setyourstack:Dispatch<SetStateAction<itechnology[]> >
 }
 
-const Techcarddesign = ({technology} : techprops) => {
+const Techcarddesign = ({technology , yourstack , setyourstack} : techprops) => {
 
   const [isselected , setisselected] = useState(false)
 
  const handlestack = () => {
       if(isselected){
-        return
+       return toast.error('invalid request', {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
       }
       setisselected(true)
       
@@ -29,6 +41,7 @@ theme: "light",
 transition: Bounce,
 });
   
+setyourstack([...yourstack , technology])
   
  }
     
@@ -87,7 +100,9 @@ transition: Bounce,
         className={isselected === false ? ` mt-5 w-full rounded-xl bg-slate-950 py-3 text-base font-medium text-white
                    transition hover:bg-slate-800` : `text-[#D91B7E] mt-5 w-full rounded-xl border py-3` }
       >
+        
         {isselected === true ? "✓ Added to Stack" : "Add to Stack"}
+        
       </button>
     </div>
         </div>
