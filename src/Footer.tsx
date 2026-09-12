@@ -3,7 +3,7 @@ import logo from "../src/assets/logo-text.png"
 const Footer = () => {
     return (
         <div>
-          <footer className="bg-white text-gray-500 font-sans text-sm">
+          <footer className="mt-20 bg-white text-gray-500 font-sans text-sm border border-t-gray-300">
   <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
   
     <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16">

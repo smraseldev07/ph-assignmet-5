@@ -1,75 +1,26 @@
-# React + TypeScript + Vite
+1 . My project name - ph-assignment-5
+2. my project is react project . a functional website where we can select technology and also remove it.
+3. in this project i use vite , typescript .
+4. in this project we can select technology , then add to your stack section and also remove it.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+i. JSX stands for JavaScript XML. It is a syntax extension for JavaScript that allows you to write HTML-like markup directly inside JavaScript code
 
-Currently, two official plugins are available:
+ii.Props (Properties): Read-only data passed from a parent component down to a child component. They are immutable from the perspective of the receiving child, meaning the child cannot modify them directly. State: An internal, mutable data store managed within the component itself. When a component's state updates via its setter function, React automatically triggers a re-render of that component and its children.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+iv .  useState is a React Hook that lets you add local, reactive state variables to functional components. It returns an array with two elements: the current state value and a updater function to modify it and trigger a re-render. i used on technology card button.
 
-## React Compiler
+v . useEffect allows you to execute side effects in functional components—such as fetching data, modifying the DOM manually, or setting up timers and subscriptions. i used it too recive promise and show it
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+vi . React uses the key prop to identify which items in a dynamic list have changed, been added, or been removed during its virtual DOM reconciliation (diffing) process.
 
-## Expanding the ESLint configuration
+A unique, stable key helps React:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Avoid re-rendering the entire list when only a single item changes.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Maintain internal component state (like inputs or animations) on the correct elements when items are sorted, added, or deleted.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+vi . Conditional rendering is the practice of rendering different UI elements or components based on specific conditions or state values, using JavaScript operators like && or ternary operators (? :).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Example displaying an empty stack message when the array length is 0:
 
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+vii .Data is passed downward as props directly on the child component tag . React uses a callback pattern. The parent passes a callback function down to the child via props. When an event occurs inside the child (such as a click or form submission), the child invokes that function and passes data back up as arguments
